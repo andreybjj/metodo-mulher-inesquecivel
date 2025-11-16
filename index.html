@@ -67,25 +67,22 @@
 <body class="min-h-full bg-gradient-to-br from-pink-50 to-rose-100">
   <main class="min-h-full">
 
-    <!-- HERO COM CORAÇÕES EM TODA A ÁREA ROSA (SEM ESTICAR) -->
+    <!-- HERO ORIGINAL (COM CORAÇÕES CENTRALIZADOS, IGUAL PRIMEIRA VERSÃO) -->
     <section class="gradient-bg text-white py-20 px-6 relative overflow-hidden">
-      <!-- pattern de corações cobrindo toda a seção, sem deformar -->
-      <div class="absolute inset-0 opacity-10 pointer-events-none">
-        <svg class="w-full h-full">
+      <div class="absolute inset-0 opacity-10">
+        <svg class="w-full h-full" viewbox="0 0 100 100" fill="none">
           <defs>
-            <pattern id="hearts" x="0" y="0" width="24" height="24" patternUnits="userSpaceOnUse">
-              <path d="M10 15l-1.45-1.32C5.4 10.36 3 8.28 3 5.5 3 3.42 4.42 2 6.5 2c1.04 0 2.04.48 2.5 1.25C9.46 2.48 10.46 2 11.5 2 13.58 2 15 3.42 15 5.5c0 2.78-2.4 4.86-5.55 7.18L10 15z"
-                    fill="currentColor" />
+            <pattern id="hearts" x="0" y="0" width="20" height="20" patternunits="userSpaceOnUse">
+              <path d="M10 15l-1.45-1.32C5.4 10.36 3 8.28 3 5.5 3 3.42 4.42 2 6.5 2c1.04 0 2.04.48 2.5 1.25C9.46 2.48 10.46 2 11.5 2 13.58 2 15 3.42 15 5.5c0 2.78-2.4 4.86-5.55 7.18L10 15z" fill="currentColor" />
             </pattern>
           </defs>
-          <rect x="0" y="0" width="100%" height="100%" fill="url(#hearts)" />
+          <rect width="100" height="100" fill="url(#hearts)" />
         </svg>
       </div>
 
       <div class="max-w-4xl mx-auto text-center relative z-10">
-        <!-- coração grande flutuando -->
         <div class="mb-8">
-          <svg class="w-20 h-20 mx-auto mb-6 heart-float" fill="currentColor" viewBox="0 0 24 24">
+          <svg class="w-20 h-20 mx-auto mb-6 heart-float" fill="currentColor" viewbox="0 0 24 24">
             <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z" />
           </svg>
         </div>
@@ -99,7 +96,7 @@
         </p>
 
         <a href="https://SEU-LINK-DE-CHECKOUT-AQUI.com"
-           class="cta-main inline-block bg-white text-pink-600 font-bold py-4 px-8 rounded-full text-lg pulse-btn shadow-lg hover:shadow-xl no-underline transition-transform duration-200">
+           class="cta-main inline-block bg-white text-pink-600 font-bold py-4 px-8 rounded-full text-lg pulse-btn shadow-lg hover:shadow-xl no-underline transition-all duration-300">
           QUERO O MÉTODO AGORA
         </a>
 
