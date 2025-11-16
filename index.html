@@ -8,28 +8,14 @@
   <!-- Favicon -->
   <link rel="icon" type="image/png" href="favicon.png">
 
-  <!-- Tailwind CDN -->
+  <!-- Tailwind -->
   <script src="https://cdn.tailwindcss.com"></script>
 
   <style>
     body { box-sizing: border-box; }
 
-    .gradient-bg {
-      background: linear-gradient(135deg, #e91e63 0%, #ad1457 100%);
-    }
-
-    .gradient-text {
-      background: linear-gradient(135deg,#e91e63,#ad1457);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      background-clip: text;
-    }
-
     .card-hover { transition: .3s; }
-    .card-hover:hover {
-      transform: translateY(-6px) scale(1.01);
-      box-shadow: 0 20px 40px rgba(233,30,99,.18);
-    }
+    .card-hover:hover { transform: translateY(-6px) scale(1.01); box-shadow: 0 20px 40px rgba(0,0,0,.18); }
 
     .pulse-btn { animation: pulse 2s infinite; }
     @keyframes pulse { 0%{transform:scale(1);}50%{transform:scale(1.05);}100%{transform:scale(1);} }
@@ -37,29 +23,35 @@
     .heart-float { animation: float 3s ease-in-out infinite; }
     @keyframes float { 0%,100%{transform:translateY(0);}50%{transform:translateY(-10px);} }
 
-    .fade-in { animation: fadeIn .8s ease-out; }
-    @keyframes fadeIn { from{opacity:0;transform:translateY(30px);}to{opacity:1;transform:translateY(0);} }
-
-    /* REVEAL ON SCROLL */
     .reveal {
-      opacity: 0;
-      transform: translateY(40px);
+      opacity: 0; transform: translateY(40px);
       transition: opacity .6s ease, transform .6s ease;
     }
-    .reveal.show {
-      opacity: 1;
-      transform: translateY(0);
-    }
+    .reveal.show { opacity: 1; transform: translateY(0); }
 
     .price-strike { position:relative; }
     .price-strike::after{
-      content:'';position:absolute;left:0;top:50%;width:100%;height:2px;
-      background:#ef4444;transform:rotate(-5deg);
+      content:''; position:absolute; left:0; top:50%; width:100%; height:2px;
+      background:#ef4444; transform:rotate(-5deg);
     }
 
     .cta-main:hover {
       transform: translateY(-2px) scale(1.02);
       box-shadow: 0 18px 35px rgba(0,0,0,.25);
+    }
+
+    /* ❤️ CORAÇÕES PREMIUM DESFOCADOS */
+    .hero-hearts {
+      position: absolute;
+      inset: 0;
+      overflow: hidden;
+      pointer-events: none;
+    }
+    .hero-heart {
+      position: absolute;
+      fill: rgba(255,255,255,0.15);
+      filter: blur(30px);
+      animation: float 6s ease-in-out infinite;
     }
   </style>
 </head>
@@ -67,29 +59,41 @@
 <body class="min-h-full bg-gradient-to-br from-pink-50 to-rose-100">
   <main class="min-h-full">
 
-    <!-- HERO ORIGINAL COM CORAÇÕES -->
-    <section class="gradient-bg text-white py-20 px-6 relative overflow-hidden">
-      <!-- pattern de corações no fundo -->
-      <div class="absolute inset-0 opacity-10">
-        <svg class="w-full h-full" viewBox="0 0 100 100" fill="none">
-          <defs>
-            <pattern id="hearts" x="0" y="0" width="20" height="20" patternUnits="userSpaceOnUse">
-              <path d="M10 15l-1.45-1.32C5.4 10.36 3 8.28 3 5.5 3 3.42 4.42 2 6.5 2c1.04 0 2.04.48 2.5 1.25C9.46 2.48 10.46 2 11.5 2 13.58 2 15 3.42 15 5.5c0 2.78-2.4 4.86-5.55 7.18L10 15z" fill="currentColor" />
-            </pattern>
-          </defs>
-          <rect width="100" height="100" fill="url(#hearts)" />
+    <!-- HERO PREMIUM -->
+    <section class="relative text-white py-24 px-6 overflow-hidden"
+             style="background: linear-gradient(135deg, #e91e63 0%, #ad1457 100%);">
+
+      <!-- ❤️ CORAÇÕES GIGANTES DESFOCADOS -->
+      <div class="hero-hearts">
+        <svg class="hero-heart w-52 h-52" style="top:5%; left:10%; transform:rotate(15deg);">
+          <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/>
+        </svg>
+
+        <svg class="hero-heart w-72 h-72" style="bottom:-5%; right:5%; transform:rotate(-20deg);">
+          <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/>
+        </svg>
+
+        <svg class="hero-heart w-64 h-64" style="top:40%; left:-10%; transform:rotate(40deg);">
+          <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/>
+        </svg>
+      </div>
+
+      <!-- coração principal flutuando -->
+      <div class="text-center relative z-10 mb-10">
+        <svg class="w-24 h-24 mx-auto heart-float opacity-90" fill="white" viewBox="0 0 24 24">
+          <path d="M12 21.35l-1.45-1.32C5.4 
+15.36 2 12.28 2 8.5 2 5.42 4.42 3 
+7.5 3c1.74 
+0 3.41.81 4.5 2.09C13.09 
+3.81 14.76 3 16.5 3 19.58 
+3 22 5.42 22 8.5c0 
+3.78-3.4 6.86-8.55 
+11.54L12 21.35z"/>
         </svg>
       </div>
 
       <div class="max-w-4xl mx-auto text-center relative z-10">
-        <!-- coração grande flutuando -->
-        <div class="mb-8">
-          <svg class="w-20 h-20 mx-auto mb-6 heart-float" fill="currentColor" viewBox="0 0 24 24">
-            <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z" />
-          </svg>
-        </div>
-
-        <h1 class="text-4xl md:text-6xl font-bold mb-6 leading-tight fade-in">
+        <h1 class="text-4xl md:text-6xl font-bold mb-6 fade-in">
           Ele te deixou… mas não significa que acabou.
         </h1>
 
@@ -98,7 +102,7 @@
         </p>
 
         <a href="https://SEU-LINK-DE-CHECKOUT-AQUI.com"
-           class="cta-main inline-block bg-white text-pink-600 font-bold py-4 px-8 rounded-full text-lg pulse-btn shadow-lg hover:shadow-xl no-underline transition-transform duration-200">
+           class="cta-main inline-block bg-white text-pink-600 font-bold py-4 px-8 rounded-full text-lg pulse-btn shadow-lg hover:shadow-xl no-underline transition">
           QUERO O MÉTODO AGORA
         </a>
 
@@ -251,7 +255,7 @@
 
           <a
             href="https://SEU-LINK-DE-CHECKOUT-AQUI.com"
-            class="cta-main inline-block bg-pink-600 text-white font-bold py-4 px-8 rounded-full text-lg pulse-btn shadow-lg hover:bg-pink-700 no-underline transition-transform duration-200"
+            class="cta-main inline-block bg-pink-600 text-white font-bold py-4 px-8 rounded-full text-lg pulse-btn shadow-lg hover:bg-pink-700 no-underline transition"
           >
             QUERO ME TORNAR INESQUECÍVEL
           </a>
@@ -270,7 +274,7 @@
 
         <a
           href="https://SEU-LINK-DE-CHECKOUT-AQUI.com"
-          class="cta-main inline-block bg-pink-500 hover:bg-pink-600 text-white font-bold py-4 px-8 rounded-full text-lg pulse-btn shadow-lg no-underline transition-transform duration-200"
+          class="cta-main inline-block bg-pink-500 hover:bg-pink-600 text-white font-bold py-4 px-8 rounded-full text-lg pulse-btn shadow-lg no-underline transition"
         >
           COMEÇAR AGORA
         </a>
@@ -284,22 +288,17 @@
   </main>
 
   <script>
-    // animação de aparecer ao rolar
     const reveals = document.querySelectorAll('.reveal');
-
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            entry.target.classList.add('show');
-            observer.unobserve(entry.target);
-          }
-        });
-      },
-      { threshold: 0.15 }
-    );
-
-    reveals.forEach((el) => observer.observe(el));
+    const observer = new IntersectionObserver((entries)=>{
+      entries.forEach(entry=>{
+        if(entry.isIntersecting){
+          entry.target.classList.add('show');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, {threshold:0.15});
+    reveals.forEach(el=>observer.observe(el));
   </script>
+
 </body>
 </html>
