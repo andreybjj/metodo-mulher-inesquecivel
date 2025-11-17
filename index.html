@@ -40,9 +40,16 @@
     .fade-in { animation: fadeIn .8s ease-out; }
     @keyframes fadeIn { from{opacity:0;transform:translateY(30px);}to{opacity:1;transform:translateY(0);} }
 
-    /* REVEAL */
-    .reveal { opacity: 0; transform: translateY(40px); transition: opacity .6s, transform .6s; }
-    .reveal.show { opacity: 1; transform: translateY(0); }
+    /* REVEAL ON SCROLL */
+    .reveal {
+      opacity: 0;
+      transform: translateY(40px);
+      transition: opacity .6s ease, transform .6s ease;
+    }
+    .reveal.show {
+      opacity: 1;
+      transform: translateY(0);
+    }
 
     .price-strike { position:relative; }
     .price-strike::after{
@@ -54,18 +61,47 @@
       transform: translateY(-2px) scale(1.02);
       box-shadow: 0 18px 35px rgba(0,0,0,.25);
     }
+
+    /* Estilo “prints” tipo WhatsApp */
+    .chat-mock {
+      border-radius: 1.5rem;
+      border: 1px solid #e5e7eb;
+      box-shadow: 0 15px 30px rgba(15,23,42,0.12);
+      overflow: hidden;
+      background: #f9fafb;
+    }
+    .chat-header {
+      background: linear-gradient(135deg,#16a34a,#22c55e);
+      color: #ecfdf5;
+    }
+    .chat-bubble {
+      display: inline-block;
+      padding: 8px 12px;
+      border-radius: 16px;
+      font-size: 0.78rem;
+      max-width: 100%;
+    }
+    .chat-bubble.me {
+      background: #dcfce7;
+      margin-left: auto;
+      border-bottom-right-radius: 4px;
+    }
+    .chat-bubble.them {
+      background: #e5e7eb;
+      border-bottom-left-radius: 4px;
+    }
   </style>
 </head>
 
 <body class="min-h-full bg-gradient-to-br from-pink-50 to-rose-100">
   <main class="min-h-full">
 
-    <!-- HERO ORIGINAL -->
+    <!-- HERO ORIGINAL (COM CORAÇÕES CENTRALIZADOS) -->
     <section class="gradient-bg text-white py-20 px-6 relative overflow-hidden">
       <div class="absolute inset-0 opacity-10">
-        <svg class="w-full h-full" viewbox="0 0 100 100" fill="none">
+        <svg class="w-full h-full" viewBox="0 0 100 100" fill="none">
           <defs>
-            <pattern id="hearts" x="0" y="0" width="20" height="20" patternunits="userSpaceOnUse">
+            <pattern id="hearts" x="0" y="0" width="20" height="20" patternUnits="userSpaceOnUse">
               <path d="M10 15l-1.45-1.32C5.4 10.36 3 8.28 3 5.5 3 3.42 4.42 2 6.5 2c1.04 0 2.04.48 2.5 1.25C9.46 2.48 10.46 2 11.5 2 13.58 2 15 3.42 15 5.5c0 2.78-2.4 4.86-5.55 7.18L10 15z" fill="currentColor" />
             </pattern>
           </defs>
@@ -75,21 +111,21 @@
 
       <div class="max-w-4xl mx-auto text-center relative z-10">
         <div class="mb-8">
-          <svg class="w-20 h-20 mx-auto mb-6 heart-float" fill="currentColor" viewbox="0 0 24 24">
+          <svg class="w-20 h-20 mx-auto mb-6 heart-float" fill="currentColor" viewBox="0 0 24 24">
             <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z" />
           </svg>
         </div>
 
-        <h1 class="text-4xl md:text-6xl font-bold mb-6 fade-in">
+        <h1 class="text-4xl md:text-6xl font-bold mb-6 leading-tight fade-in">
           Ele te deixou… mas não significa que acabou.
         </h1>
 
-        <p class="text-xl md:text-2xl mb-8 opacity-90 fade-in">
+        <p class="text-xl md:text-2xl mb-8 opacity-90 max-w-3xl mx-auto fade-in">
           Descubra o método que reacende desejo, respeito e faz ele correr atrás de você — sem se humilhar.
         </p>
 
         <a href="https://SEU-LINK-DE-CHECKOUT-AQUI.com"
-           class="cta-main inline-block bg-white text-pink-600 font-bold py-4 px-8 rounded-full text-lg pulse-btn shadow-lg no-underline transition-all">
+           class="cta-main inline-block bg-white text-pink-600 font-bold py-4 px-8 rounded-full text-lg pulse-btn shadow-lg hover:shadow-xl no-underline transition-all duration-300">
           QUERO O MÉTODO AGORA
         </a>
 
@@ -103,14 +139,31 @@
         <h2 class="text-4xl font-bold text-center mb-12 gradient-text">💔 Você sente ele diferente?</h2>
 
         <div class="grid md:grid-cols-2 gap-8 mb-8">
-          <div class="bg-white p-8 rounded-2xl shadow-lg card-hover"><h3 class="font-bold">Ficou frio e distante</h3><p class="text-gray-600">Não demonstra mais carinho como antes.</p></div>
-          <div class="bg-white p-8 rounded-2xl shadow-lg card-hover"><h3 class="font-bold">Responde seco ou ignora</h3><p class="text-gray-600">As conversas não fluem mais naturalmente.</p></div>
-          <div class="bg-white p-8 rounded-2xl shadow-lg card-hover"><h3 class="font-bold">Você tem medo de parecer desesperada</h3><p class="text-gray-600">Cada movimento seu parece errado.</p></div>
-          <div class="bg-white p-8 rounded-2xl shadow-lg card-hover"><h3 class="font-bold">Qualquer conversa vira briga</h3><p class="text-gray-600">A tensão está sempre no ar.</p></div>
+          <div class="bg-white p-8 rounded-2xl shadow-lg card-hover">
+            <h3 class="font-bold text-gray-800 mb-2">Ficou frio e distante</h3>
+            <p class="text-gray-600">Não demonstra mais carinho como antes.</p>
+          </div>
+
+          <div class="bg-white p-8 rounded-2xl shadow-lg card-hover">
+            <h3 class="font-bold text-gray-800 mb-2">Responde seco ou ignora</h3>
+            <p class="text-gray-600">As conversas não fluem mais naturalmente.</p>
+          </div>
+
+          <div class="bg-white p-8 rounded-2xl shadow-lg card-hover">
+            <h3 class="font-bold text-gray-800 mb-2">Você tem medo de parecer desesperada</h3>
+            <p class="text-gray-600">Cada movimento seu parece errado.</p>
+          </div>
+
+          <div class="bg-white p-8 rounded-2xl shadow-lg card-hover">
+            <h3 class="font-bold text-gray-800 mb-2">Qualquer conversa vira briga</h3>
+            <p class="text-gray-600">A tensão está sempre no ar.</p>
+          </div>
         </div>
 
         <div class="bg-yellow-50 border-l-4 border-yellow-400 p-6 rounded-lg">
-          <p class="text-gray-700 text-lg font-medium">⚠️ A maioria reage tentando “resolver”, mas isso só afasta ele mais.</p>
+          <p class="text-gray-700 text-lg font-medium">
+            ⚠️ A maioria reage tentando “resolver”, mas isso só afasta ele mais.
+          </p>
         </div>
       </div>
     </section>
@@ -119,9 +172,10 @@
     <section class="py-16 px-6 bg-white reveal">
       <div class="max-w-4xl mx-auto text-center">
         <h2 class="text-4xl font-bold mb-8 gradient-text">🔄 A virada</h2>
-        <div class="bg-gradient-to-r from-pink-50 to-rose-50 p-8 rounded-2xl border border-pink-200">
-          <p class="text-xl text-gray-700">
+        <div class="bg-gradient-to-r from-pink-50 to-rose-50 p-8 rounded-2xl border border-pink-200 card-hover">
+          <p class="text-xl text-gray-700 leading-relaxed">
             Quando você muda seu posicionamento, ele sente sua falta, volta a pensar em você e retoma o interesse.
+            O método te ensina exatamente como fazer isso passo a passo.
           </p>
         </div>
       </div>
@@ -133,13 +187,29 @@
         <h2 class="text-4xl font-bold text-center mb-12 gradient-text">🎁 O que você recebe</h2>
 
         <div class="grid md:grid-cols-2 gap-6">
-          <div class="bg-white p-6 rounded-xl shadow-lg card-hover"><h3 class="font-bold">📘 Guia principal</h3><p class="text-gray-600">Método completo explicado.</p></div>
-          <div class="bg-white p-6 rounded-xl shadow-lg card-hover"><h3 class="font-bold">🗺️ Comunicação Irresistível</h3><p class="text-gray-600">Como falar de forma magnética.</p></div>
-          <div class="bg-white p-6 rounded-xl shadow-lg card-hover"><h3 class="font-bold">🤫 Silêncio Inteligente</h3><p class="text-gray-600">O poder do que NÃO é dito.</p></div>
-          <div class="bg-white p-6 rounded-xl shadow-lg card-hover"><h3 class="font-bold">📝 Checklist do Reencontro</h3><p class="text-gray-600">Passo a passo para agir.</p></div>
+          <div class="bg-white p-6 rounded-xl shadow-lg card-hover">
+            <h3 class="font-bold text-gray-800 mb-2">📘 Guia principal — Mulher que Ele Nunca Esquece</h3>
+            <p class="text-gray-600">Método completo, explicado de forma simples e direta.</p>
+          </div>
+
+          <div class="bg-white p-6 rounded-xl shadow-lg card-hover">
+            <h3 class="font-bold text-gray-800 mb-2">🗺️ Mapa da Comunicação Irresistível</h3>
+            <p class="text-gray-600">Como falar com ele de um jeito magnético, sem parecer carente.</p>
+          </div>
+
+          <div class="bg-white p-6 rounded-xl shadow-lg card-hover">
+            <h3 class="font-bold text-gray-800 mb-2">🤫 Silêncio Inteligente</h3>
+            <p class="text-gray-600">O poder do que você NÃO diz — e como isso faz ele te notar.</p>
+          </div>
+
+          <div class="bg-white p-6 rounded-xl shadow-lg card-hover">
+            <h3 class="font-bold text-gray-800 mb-2">📝 Checklist do Reencontro</h3>
+            <p class="text-gray-600">Passo a passo para agir quando ele voltar a te procurar.</p>
+          </div>
+
           <div class="bg-pink-50 p-6 rounded-xl border-2 border-pink-200 card-hover md:col-span-2">
-            <h3 class="font-bold text-pink-600">💋 Bônus: Mensagens de desejo</h3>
-            <p class="text-gray-600">Templates prontos para usar.</p>
+            <h3 class="font-bold text-pink-600 mb-2">💋 Bônus: Mensagens que despertam desejo</h3>
+            <p class="text-gray-600">Templates prontos para ativar curiosidade, emoção e desejo nele.</p>
           </div>
         </div>
       </div>
@@ -149,23 +219,42 @@
     <section class="py-16 px-6 bg-white reveal">
       <div class="max-w-4xl mx-auto text-center">
         <h2 class="text-4xl font-bold mb-8 gradient-text">🎯 Por que funciona?</h2>
-        <div class="bg-gradient-to-r from-blue-50 to-indigo-50 p-8 rounded-2xl border border-blue-200">
-          <p class="text-xl text-gray-700 mb-6">Baseado em psicologia masculina + posicionamento feminino de alto valor.</p>
-          <p class="text-lg text-gray-600">Funciona mesmo se ele esfriou ou sumiu.</p>
+        <div class="bg-gradient-to-r from-blue-50 to-indigo-50 p-8 rounded-2xl border border-blue-200 card-hover">
+          <p class="text-xl text-gray-700 mb-6">
+            Baseado em psicologia masculina, gatilhos emocionais e posicionamento feminino de alto valor.
+          </p>
+          <p class="text-lg text-gray-600">
+            Mesmo se ele esfriou, sumiu ou disse que “não sabe mais o que sente”.
+          </p>
         </div>
       </div>
     </section>
 
-    <!-- RESULTADOS -->
+    <!-- RESULTADOS REAIS -->
     <section class="py-16 px-6 reveal">
       <div class="max-w-4xl mx-auto">
         <h2 class="text-4xl font-bold text-center mb-12 gradient-text">✨ Resultados reais</h2>
 
         <div class="grid md:grid-cols-2 gap-6">
-          <div class="bg-green-50 p-6 rounded-xl border-green-200 card-hover"><h3 class="font-bold">Ele voltou a mandar mensagem</h3><p class="text-green-600">Ele retomou contato sozinho.</p></div>
-          <div class="bg-green-50 p-6 rounded-xl border-green-200 card-hover"><h3 class="font-bold">Mostrou ciúmes</h3><p class="text-green-600">Você nota que ele se importa.</p></div>
-          <div class="bg-green-50 p-6 rounded-xl border-green-200 card-hover"><h3 class="font-bold">Chamou para conversar</h3><p class="text-green-600">Ele busca reaproximação.</p></div>
-          <div class="bg-green-50 p-6 rounded-xl border-green-200 card-hover"><h3 class="font-bold">Você se sente confiante</h3><p class="text-green-600">Autoestima renovada.</p></div>
+          <div class="bg-green-50 p-6 rounded-xl border-green-200 card-hover">
+            <h3 class="font-bold text-green-700 mb-1">Ele voltou a mandar mensagem</h3>
+            <p class="text-green-600">Retomou contato por iniciativa própria.</p>
+          </div>
+
+          <div class="bg-green-50 p-6 rounded-xl border-green-200 card-hover">
+            <h3 class="font-bold text-green-700 mb-1">Mostrou ciúmes</h3>
+            <p class="text-green-600">Você percebe que ainda existe interesse.</p>
+          </div>
+
+          <div class="bg-green-50 p-6 rounded-xl border-green-200 card-hover">
+            <h3 class="font-bold text-green-700 mb-1">Chamou para conversar</h3>
+            <p class="text-green-600">Ele se aproxima de novo para resolver.</p>
+          </div>
+
+          <div class="bg-green-50 p-6 rounded-xl border-green-200 card-hover">
+            <h3 class="font-bold text-green-700 mb-1">Você se sente confiante</h3>
+            <p class="text-green-600">Autoestima renovada, independente do que ele faça.</p>
+          </div>
         </div>
       </div>
     </section>
@@ -173,52 +262,164 @@
     <!-- DEPOIMENTOS BR RAIZ -->
     <section class="py-16 px-6 bg-white reveal">
       <div class="max-w-4xl mx-auto">
-        <h2 class="text-4xl font-bold text-center mb-4 gradient-text">💬 O que as alunas estão dizendo</h2>
-        <p class="text-center text-gray-600 mb-10">Depoimentos reais, com a linguagem de verdade das mulheres brasileiras.</p>
+        <h2 class="text-4xl font-bold text-center mb-4 gradient-text">
+          💬 O que as alunas estão dizendo
+        </h2>
+        <p class="text-center text-gray-600 mb-10">
+          Histórias de mulheres reais que aplicaram o método e viram a atitude dele mudar na prática.
+        </p>
 
         <div class="grid md:grid-cols-3 gap-6">
-
           <div class="bg-pink-50 border border-pink-100 rounded-2xl p-5 shadow-sm card-hover">
             <p class="text-sm text-gray-600 italic mb-4">
-              “Amiga, eu juro… ele tava me tratando com total frieza. Fiz o método direitinho e em 3 dias o homem tava me chamando de saudade. Nem acreditei.”
+              “Amiga, eu juro... ele tava me tratando com total frieza. Fiz o método como manda e em 3 dias o homem tava
+              me chamando de saudade. Nem acreditei.”
             </p>
             <p class="text-xs font-semibold text-pink-600">Letícia • 27 anos</p>
           </div>
 
           <div class="bg-pink-50 border border-pink-100 rounded-2xl p-5 shadow-sm card-hover">
             <p class="text-sm text-gray-600 italic mb-4">
-              “Eu corria atrás demais. Apliquei o silêncio inteligente e menina… o homem voltou MANSO, perguntando se eu tava ‘estranha’ (kkkk).”
+              “Eu corria atrás demais, parecia até outra pessoa. Apliquei o silêncio inteligente e menina… o homem voltou
+              mansinho perguntando se eu tava ‘estranha’ (kkkk).”
             </p>
             <p class="text-xs font-semibold text-pink-600">Camila • 32 anos</p>
           </div>
 
           <div class="bg-pink-50 border border-pink-100 rounded-2xl p-5 shadow-sm card-hover">
             <p class="text-sm text-gray-600 italic mb-4">
-              “Achei que era caso perdido. Segui o passo a passo, fiquei na minha… ele voltou falando que tava com saudade do meu jeito. FUNCIONA.”
+              “Achei que era caso perdido. Segui o passo a passo, fiquei na minha… ele veio falar que tava com saudade
+              do meu jeito. FUNCIONA de verdade.”
             </p>
             <p class="text-xs font-semibold text-pink-600">Rafaela • 30 anos</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- PRINTS ESTILO WHATSAPP -->
+    <section class="py-16 px-6 bg-white reveal">
+      <div class="max-w-4xl mx-auto">
+        <h2 class="text-3xl font-bold text-center mb-4 gradient-text">
+          📱 Como as conversas começam a mudar...
+        </h2>
+        <p class="text-center text-gray-600 mb-10">
+          Exemplos de como ele passa a te procurar, puxar assunto e demonstrar interesse de novo.
+        </p>
+
+        <div class="grid md:grid-cols-3 gap-6">
+
+          <!-- Print 1 -->
+          <div class="chat-mock">
+            <div class="chat-header px-4 py-2 flex items-center gap-2">
+              <span class="w-2 h-2 bg-emerald-300 rounded-full"></span>
+              <div>
+                <p class="text-xs font-semibold leading-tight">Ele 💬</p>
+                <p class="text-[10px] opacity-80">online há 5 minutos</p>
+              </div>
+            </div>
+            <div class="p-3 space-y-2 text-[11px] text-gray-800">
+              <div class="chat-bubble them">
+                Oi... você sumiu 😅
+              </div>
+              <div class="chat-bubble them">
+                Confesso que senti sua falta esses dias.
+              </div>
+              <div class="chat-bubble me">
+                Tava cuidando de mim um pouco. 😊
+              </div>
+              <div class="chat-bubble them">
+                A gente podia se ver qualquer dia desses, né?
+              </div>
+            </div>
+          </div>
+
+          <!-- Print 2 -->
+          <div class="chat-mock">
+            <div class="chat-header px-4 py-2 flex items-center gap-2">
+              <span class="w-2 h-2 bg-emerald-300 rounded-full"></span>
+              <div>
+                <p class="text-xs font-semibold leading-tight">Ele 💬</p>
+                <p class="text-[10px] opacity-80">digitando...</p>
+              </div>
+            </div>
+            <div class="p-3 space-y-2 text-[11px] text-gray-800">
+              <div class="chat-bubble them">
+                Você tá diferente... mais tranquila, mais de boa.
+              </div>
+              <div class="chat-bubble me">
+                Só parei de insistir onde não tava sendo valorizada. 😉
+              </div>
+              <div class="chat-bubble them">
+                Não quero te perder, de verdade.
+              </div>
+            </div>
+          </div>
+
+          <!-- Print 3 -->
+          <div class="chat-mock">
+            <div class="chat-header px-4 py-2 flex items-center gap-2">
+              <span class="w-2 h-2 bg-emerald-300 rounded-full"></span>
+              <div>
+                <p class="text-xs font-semibold leading-tight">Ele 💬</p>
+                <p class="text-[10px] opacity-80">visto por último hoje</p>
+              </div>
+            </div>
+            <div class="p-3 space-y-2 text-[11px] text-gray-800">
+              <div class="chat-bubble them">
+                Lembrei de você hoje, do nada.
+              </div>
+              <div class="chat-bubble me">
+                É mesmo? 😅
+              </div>
+              <div class="chat-bubble them">
+                Saudades de quando a gente ficava horas conversando...
+              </div>
+              <div class="chat-bubble them">
+                Você tá bem?
+              </div>
+            </div>
           </div>
 
         </div>
       </div>
     </section>
 
-    <!-- GARANTIA -->
+    <!-- GARANTIA 7 DIAS (SELO AJUSTADO) -->
     <section class="py-16 px-6 bg-gradient-to-r from-emerald-50 to-green-50 reveal">
       <div class="max-w-3xl mx-auto">
         <div class="bg-white rounded-2xl border border-emerald-200 p-8 shadow-md card-hover">
           <div class="flex flex-col md:flex-row items-center gap-6">
-            <div class="w-28 h-28 rounded-full border-4 border-emerald-500 flex flex-col items-center justify-center">
-              <span class="text-xs font-semibold text-emerald-600 uppercase">Garantia</span>
-              <span class="text-2xl font-extrabold text-emerald-700">7 dias</span>
-              <span class="text-[10px] text-emerald-500 uppercase">100% segura</span>
+            <!-- Selo -->
+            <div class="flex-shrink-0">
+              <div class="relative">
+                <div class="w-28 h-28 rounded-full border-[3px] border-dashed border-emerald-500 flex flex-col items-center justify-center bg-emerald-50">
+                  <span class="text-[10px] font-semibold text-emerald-700 uppercase tracking-wide">Selo oficial</span>
+                  <span class="text-xl font-extrabold text-emerald-700">7 dias</span>
+                  <span class="text-[10px] text-emerald-600 uppercase tracking-wide">Garantia total</span>
+                </div>
+                <div class="absolute -bottom-3 left-1/2 -translate-x-1/2 bg-emerald-500 text-white text-[9px] font-semibold px-3 py-1 rounded-full shadow">
+                  Risco zero
+                </div>
+              </div>
             </div>
 
+            <!-- Texto -->
             <div>
-              <h2 class="text-2xl font-bold mb-3 text-emerald-700">Garantia incondicional 💚</h2>
-              <p class="text-gray-700 mb-3">Você tem 7 dias inteiros para testar o método sem risco.</p>
-              <p class="text-gray-700 mb-3">Se não fizer sentido pra você, devolvemos 100% do valor. Sem perguntas.</p>
-              <p class="text-sm text-gray-500">O risco é meu. A transformação é sua.</p>
+              <h2 class="text-2xl font-bold mb-3 text-emerald-700">
+                Teste o método por 7 dias sem medo 💚
+              </h2>
+              <p class="text-gray-700 mb-3">
+                Você tem 7 dias inteiros para acessar o conteúdo, aplicar as estratégias e sentir se o método realmente
+                faz sentido pra sua realidade.
+              </p>
+              <p class="text-gray-700 mb-3">
+                Se dentro desse período você perceber que não é pra você, basta enviar uma mensagem e devolvemos
+                100% do valor investido. Sem burocracia, sem letrinha miúda, sem enrolação.
+              </p>
+              <p class="text-sm text-gray-500">
+                Eu assumo o risco por você, pra que você possa decidir com calma — com o coração tranquilo.
+              </p>
             </div>
           </div>
         </div>
@@ -238,8 +439,10 @@
 
           <div class="text-5xl font-bold text-pink-600 mb-6">R$ 29,90</div>
 
-          <a href="https://SEU-LINK-DE-CHECKOUT-AQUI.com"
-             class="cta-main inline-block bg-pink-600 text-white font-bold py-4 px-8 rounded-full text-lg pulse-btn shadow-lg no-underline">
+          <a
+            href="https://SEU-LINK-DE-CHECKOUT-AQUI.com"
+            class="cta-main inline-block bg-pink-600 text-white font-bold py-4 px-8 rounded-full text-lg pulse-btn shadow-lg hover:bg-pink-700 no-underline transition-transform duration-200"
+          >
             QUERO ME TORNAR INESQUECÍVEL
           </a>
         </div>
@@ -250,14 +453,21 @@
     <section class="py-16 px-6 bg-gray-900 text-white reveal">
       <div class="max-w-4xl mx-auto text-center">
         <h2 class="text-4xl font-bold mb-6">🔑 A decisão é sua</h2>
-        <p class="text-xl mb-8 opacity-90">Um passo agora pode mudar completamente sua história com ele.</p>
 
-        <a href="https://SEU-LINK-DE-CHECKOUT-AQUI.com"
-           class="cta-main inline-block bg-pink-500 hover:bg-pink-600 text-white font-bold py-4 px-8 rounded-full text-lg pulse-btn shadow-lg">
+        <p class="text-xl mb-8 opacity-90">
+          Você pode continuar esperando ele mudar sozinho… ou assumir o controle da sua história a partir de hoje.
+        </p>
+
+        <a
+          href="https://SEU-LINK-DE-CHECKOUT-AQUI.com"
+          class="cta-main inline-block bg-pink-500 hover:bg-pink-600 text-white font-bold py-4 px-8 rounded-full text-lg pulse-btn shadow-lg no-underline transition-transform duration-200"
+        >
           COMEÇAR AGORA
         </a>
 
-        <p class="mt-6 text-sm opacity-75">🔒 Compra 100% Segura • 💝 Garantia de Satisfação • 📱 Suporte Completo</p>
+        <p class="mt-6 text-sm opacity-75">
+          🔒 Compra 100% Segura • 💝 Garantia de Satisfação • 📱 Suporte Completo
+        </p>
       </div>
     </section>
 
@@ -265,16 +475,15 @@
 
   <script>
     const reveals = document.querySelectorAll('.reveal');
-    const obs = new IntersectionObserver((entries)=>{
+    const observer = new IntersectionObserver((entries)=>{
       entries.forEach(entry=>{
         if(entry.isIntersecting){
           entry.target.classList.add('show');
-          obs.unobserve(entry.target);
+          observer.unobserve(entry.target);
         }
       });
     }, {threshold:0.15});
-    reveals.forEach(el=>obs.observe(el));
+    reveals.forEach(el=>observer.observe(el));
   </script>
-
 </body>
 </html>
