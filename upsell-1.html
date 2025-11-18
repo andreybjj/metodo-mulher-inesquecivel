@@ -1,0 +1,327 @@
+<!doctype html>
+<html lang="pt-BR" class="h-full">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Upsell – 50 Mensagens Irresistíveis</title>
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="favicon.png" />
+
+  <!-- Tailwind -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <style>
+    body {
+      box-sizing: border-box;
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    }
+
+    .gradient-hero {
+      background: linear-gradient(135deg, #ec4899 0%, #be185d 50%, #7c2d12 100%);
+    }
+
+    .gradient-card {
+      background: linear-gradient(145deg, #fdf2f8 0%, #fce7f3 100%);
+    }
+
+    .shadow-luxury {
+      box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+    }
+
+    .shadow-soft {
+      box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1);
+    }
+
+    .pulse-button {
+      animation: pulse 2s infinite;
+    }
+
+    @keyframes pulse {
+      0%, 100% { transform: scale(1); }
+      50% { transform: scale(1.05); }
+    }
+
+    .animate-pop {
+      animation: popIn 0.7s ease-out forwards;
+      opacity: 0;
+      transform: translateY(15px) scale(0.97);
+    }
+
+    @keyframes popIn {
+      0%   { opacity: 0; transform: translateY(20px) scale(0.97); }
+      60%  { opacity: 1; transform: translateY(0) scale(1.03); }
+      100% { opacity: 1; transform: translateY(0) scale(1); }
+    }
+
+    .price-strike {
+      position: relative;
+    }
+
+    .price-strike::after {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 50%;
+      width: 100%;
+      height: 2px;
+      background: #dc2626;
+      transform: rotate(-5deg);
+    }
+
+    .floating-hearts {
+      position: absolute;
+      animation: float 3s ease-in-out infinite;
+    }
+
+    @keyframes float {
+      0%, 100% { transform: translateY(0px); }
+      50% { transform: translateY(-10px); }
+    }
+  </style>
+</head>
+
+<body class="h-full bg-gray-50 text-gray-900">
+
+  <!-- HERO – PARABÉNS + OFERTA -->
+  <section class="gradient-hero text-white py-14 px-4 relative overflow-hidden">
+    <div class="floating-hearts top-8 left-10 text-pink-200 text-2xl">💕</div>
+    <div class="floating-hearts top-16 right-16 text-pink-200 text-xl" style="animation-delay: 1s;">✨</div>
+
+    <div class="max-w-5xl mx-auto">
+      <div class="bg-white/10 backdrop-blur-sm rounded-3xl p-6 sm:p-10 shadow-luxury animate-pop" style="animation-delay: 0.1s;">
+        <p class="text-xs sm:text-sm font-semibold uppercase tracking-wide text-pink-100 mb-2">
+          Passo extra para mulheres que querem resultado rápido
+        </p>
+
+        <h1 class="text-2xl sm:text-3xl lg:text-4xl font-bold mb-3 leading-tight">
+          Parabéns! Seu acesso ao <span class="underline decoration-pink-200">Método da Mulher que Ele Nunca Esquece</span> já está garantido. 💖
+        </h1>
+
+        <p class="text-sm sm:text-base lg:text-lg opacity-95 mb-4 leading-relaxed">
+          Antes de você ir para o e-mail, quero te oferecer uma oportunidade que só aparece
+          <span class="font-semibold">uma vez</span> para quem acabou de entrar no método:
+        </p>
+
+        <p class="text-lg sm:text-xl lg:text-2xl font-semibold mb-6 leading-relaxed">
+          <span class="bg-black/20 px-2 py-1 rounded-lg">
+            As <span class="text-yellow-300">50 Mensagens Irresistíveis</span> que fazem ele procurar você
+            sem você precisar ficar pensando no que escrever.
+          </span>
+        </p>
+
+        <p class="text-sm sm:text-base lg:text-lg opacity-95 mb-6 leading-relaxed">
+          Se o Método é o mapa… essas 50 mensagens são o <strong>atalho</strong>.
+          Em vez de perder horas apagando e reescrevendo textos, você simplesmente escolhe a mensagem certa,
+          copia, adapta com o seu jeito – e envia.
+        </p>
+
+        <div class="mt-4 flex flex-col sm:flex-row items-stretch sm:items-center gap-4">
+          <a id="yes-main-link" href="#" class="sm:flex-1">
+            <button
+              class="pulse-button w-full bg-gradient-to-r from-yellow-400 to-orange-500 text-black font-bold text-sm sm:text-base px-6 py-3 sm:py-4 rounded-full shadow-luxury hover:shadow-2xl transition-all duration-300 transform hover:scale-105">
+              ✅ SIM, QUERO ADICIONAR AS 50 MENSAGENS AO MEU PEDIDO
+            </button>
+          </a>
+          <button
+            id="no-main"
+            class="w-full sm:w-auto text-xs sm:text-sm underline text-pink-100 hover:text-white">
+            Não, prefiro continuar sozinha pensando no que escrever
+          </button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- POR QUE ISSO É UM ATALHO -->
+  <section class="py-14 px-4 bg-white">
+    <div class="max-w-5xl mx-auto grid lg:grid-cols-2 gap-10 items-center">
+      <div class="animate-pop" style="animation-delay: 0.1s;">
+        <h2 class="text-2xl sm:text-3xl font-bold text-gray-800 mb-4">
+          Você já tem o método. Agora pode ter as palavras certas.
+        </h2>
+        <p class="text-base sm:text-lg text-gray-700 mb-4">
+          Uma coisa é saber o que fazer. Outra é saber o que <strong>falar</strong> na hora certa, sem parecer
+          carente, grudenta ou desesperada.
+        </p>
+        <p class="text-base sm:text-lg text-gray-700 mb-4">
+          Essas <strong>50 Mensagens Irresistíveis</strong> foram pensadas para:
+        </p>
+        <ul class="space-y-3 text-sm sm:text-base text-gray-700">
+          <li>✔ Despertar a curiosidade dele, sem você precisar se humilhar.</li>
+          <li>✔ Fazer ele lembrar de você do nada, mesmo depois de dias distante.</li>
+          <li>✔ Quebrar o gelo depois de um sumiço ou briga.</li>
+          <li>✔ Aumentar o desejo e a conexão, sem cair na vulgaridade.</li>
+          <li>✔ Mostrar que você está segura, interessante e em outra energia.</li>
+        </ul>
+        <p class="text-sm sm:text-base text-gray-700 mt-4">
+          Em vez de ficar olhando o celular sem saber o que escrever, você vai ter um menu de opções prontas,
+          separadas por <strong>situações reais</strong>.
+        </p>
+      </div>
+
+      <div class="animate-pop" style="animation-delay: 0.2s;">
+        <div class="gradient-card p-6 rounded-3xl shadow-soft">
+          <h3 class="text-xl font-bold text-gray-800 mb-3">
+            Situações em que você vai usar essas mensagens:
+          </h3>
+          <ul class="text-sm sm:text-base text-gray-700 space-y-2 text-left">
+            <li>💌 Quando ele some e volta do nada com um “Oi, sumida”.</li>
+            <li>💭 Quando você quer que ele te chame para sair, mas sem pedir.</li>
+            <li>🧊 Quando a conversa está fria e você quer reacender o interesse.</li>
+            <li>🔥 Quando você sente que é hora de aumentar a tensão e o desejo.</li>
+            <li>🔄 Quando vocês já voltaram a se falar, mas você não quer cair na rotina de antes.</li>
+          </ul>
+          <p class="text-sm text-gray-600 mt-4">
+            É como ter uma amiga experiente ao seu lado, soprando no seu ouvido exatamente o que responder
+            para virar a conversa a seu favor.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- O QUE VOCÊ RECEBE -->
+  <section class="py-14 px-4 bg-gradient-to-br from-pink-50 to-purple-50">
+    <div class="max-w-5xl mx-auto">
+      <h2 class="text-2xl sm:text-3xl font-bold text-gray-800 text-center mb-8 animate-pop">
+        O que vem nas 50 Mensagens Irresistíveis:
+      </h2>
+
+      <div class="grid md:grid-cols-2 gap-8">
+        <div class="bg-white rounded-3xl p-6 shadow-soft animate-pop" style="animation-delay: 0.1s;">
+          <h3 class="text-lg sm:text-xl font-semibold text-gray-800 mb-3">
+            🔹 Mensagens para quando ele está frio
+          </h3>
+          <p class="text-sm sm:text-base text-gray-700">
+            Textos curtos, inteligentes e sutis para puxar assunto sem parecer que você está correndo atrás.
+            Perfeitos para quando ele responde seco, demora a responder ou parece distante.
+          </p>
+        </div>
+
+        <div class="bg-white rounded-3xl p-6 shadow-soft animate-pop" style="animation-delay: 0.15s;">
+          <h3 class="text-lg sm:text-xl font-semibold text-gray-800 mb-3">
+            🔹 Mensagens para reacender o desejo
+          </h3>
+          <p class="text-sm sm:text-base text-gray-700">
+            Mensagens que mexem com a imaginação dele, aumentam o interesse e fazem ele começar a te enxergar
+            de um jeito completamente diferente – sem apelação barata.
+          </p>
+        </div>
+
+        <div class="bg-white rounded-3xl p-6 shadow-soft animate-pop" style="animation-delay: 0.2s;">
+          <h3 class="text-lg sm:text-xl font-semibold text-gray-800 mb-3">
+            🔹 Mensagens para depois da briga ou afastamento
+          </h3>
+          <p class="text-sm sm:text-base text-gray-700">
+            Frases pensadas para quebrar o clima pesado, abrir uma brecha de conversa e mostrar maturidade,
+            sem você precisar pedir desculpas por tudo o tempo todo.
+          </p>
+        </div>
+
+        <div class="bg-white rounded-3xl p-6 shadow-soft animate-pop" style="animation-delay: 0.25s;">
+          <h3 class="text-lg sm:text-xl font-semibold text-gray-800 mb-3">
+            🔹 Mensagens para manter a chama acesa
+          </h3>
+          <p class="text-sm sm:text-base text-gray-700">
+            Quando ele já voltou a falar com você, essas mensagens mantêm o interesse alto e evitam que tudo
+            volte para o marasmo de antes.
+          </p>
+        </div>
+      </div>
+
+      <p class="text-sm sm:text-base text-gray-700 text-center mt-8 max-w-3xl mx-auto animate-pop" style="animation-delay: 0.3s;">
+        Todas as mensagens vêm organizadas por tema e situação, com orientações breves de <strong>como adaptar
+        para a sua realidade</strong>, sem perder a essência que mexe com o emocional dele.
+      </p>
+    </div>
+  </section>
+
+  <!-- OFERTA / PREÇO -->
+  <section class="py-14 px-4 bg-gradient-to-br from-purple-900 to-pink-900 text-white">
+    <div class="max-w-4xl mx-auto text-center">
+      <h2 class="text-2xl sm:text-3xl font-bold mb-4 animate-pop">
+        Oferta exclusiva para quem acabou de entrar no Método
+      </h2>
+      <p class="text-sm sm:text-base opacity-90 mb-8 animate-pop" style="animation-delay: 0.1s;">
+        Você não vai encontrar essas 50 mensagens separadas assim em nenhum outro lugar.
+        Elas foram criadas como complemento direto do Método da Mulher que Ele Nunca Esquece.
+      </p>
+
+      <div class="bg-white/10 backdrop-blur-sm rounded-3xl p-8 shadow-luxury animate-pop" style="animation-delay: 0.15s;">
+        <p class="text-sm sm:text-base opacity-75 mb-2">Valor normal desse material separado:</p>
+        <p class="price-strike text-3xl font-bold text-red-200 mb-4">R$ 97,00</p>
+
+        <p class="text-sm sm:text-base opacity-75 mb-2">
+          Mas como você acabou de adquirir o método principal, hoje você pode adicionar as
+          <strong>50 Mensagens Irresistíveis</strong> ao seu pedido por apenas:
+        </p>
+        <p class="text-4xl sm:text-5xl font-extrabold text-yellow-300 mb-3">
+          R$ 39,90
+        </p>
+
+        <p class="text-xs sm:text-sm opacity-90 mb-6">
+          Menos do que o valor de um lanche ou delivery que acaba em uma noite, por algo que pode mudar
+          <strong>todas as conversas</strong> que você ainda vai ter com ele.
+        </p>
+
+        <a id="yes-offer-link" href="#" class="inline-block w-full max-w-md mx-auto mb-3">
+          <button
+            class="pulse-button w-full bg-gradient-to-r from-yellow-400 to-orange-500 text-black font-bold text-sm sm:text-base px-8 py-4 rounded-full shadow-luxury hover:shadow-2xl transition-all duration-300 transform hover:scale-105">
+            ✅ SIM, QUERO ADICIONAR AS 50 MENSAGENS AO MEU PEDIDO AGORA
+          </button>
+        </a>
+
+        <button
+          id="no-offer"
+          class="mt-2 text-xs sm:text-sm underline text-pink-100 hover:text-white">
+          Não, quero continuar sozinha tentando adivinhar o que falar
+        </button>
+      </div>
+
+      <p class="text-xs sm:text-sm opacity-80 mt-6 animate-pop" style="animation-delay: 0.2s;">
+        Essa condição especial aparece apenas uma vez. Se você decidir não aproveitar agora,
+        não terá essa mesma oferta novamente com esse valor.
+      </p>
+    </div>
+  </section>
+
+  <!-- RODAPÉ SIMPLES -->
+  <footer class="bg-gray-900 text-white py-6 px-4">
+    <div class="max-w-4xl mx-auto text-center">
+      <p class="text-gray-400 text-xs sm:text-sm">
+        © 2024 Método da Mulher que Ele Nunca Esquece. Upsell – 50 Mensagens Irresistíveis.
+      </p>
+    </div>
+  </footer>
+
+  <script>
+    // SUBSTITUA PELOS LINKS DA KIRVANO QUANDO TIVER:
+    const YES_LINK = "LINK_ACEITAR_UPSELL_AQUI";   // link de aceitar upsell
+    const NO_LINK  = "LINK_RECUSAR_UPSELL_AQUI";   // link de recusar upsell (ou obrigado)
+
+    document.addEventListener("DOMContentLoaded", function () {
+      const yesMainLink  = document.getElementById("yes-main-link");
+      const yesOfferLink = document.getElementById("yes-offer-link");
+      const noMainBtn    = document.getElementById("no-main");
+      const noOfferBtn   = document.getElementById("no-offer");
+
+      if (yesMainLink)  yesMainLink.href  = YES_LINK;
+      if (yesOfferLink) yesOfferLink.href = YES_LINK;
+
+      function handleNo() {
+        if (NO_LINK && NO_LINK !== "LINK_RECUSAR_UPSELL_AQUI") {
+          window.location.href = NO_LINK;
+        } else {
+          // fallback: rola pro topo e não faz nada crítico
+          window.scrollTo({ top: 0, behavior: "smooth" });
+        }
+      }
+
+      if (noMainBtn)  noMainBtn.addEventListener("click", handleNo);
+      if (noOfferBtn) noOfferBtn.addEventListener("click", handleNo);
+    });
+  </script>
+
+</body>
+</html>
