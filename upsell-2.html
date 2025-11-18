@@ -96,17 +96,16 @@
         </p>
 
         <div class="flex flex-col sm:flex-row gap-3 sm:items-center">
-          <a id="yes-main-link" href="#" class="sm:flex-1">
+          <a id="yes-main-link" href="https://pay.kirvano.com/20b8aba3-2877-4ee7-91eb-0c6e13647610" class="sm:flex-1">
             <button
               class="pulse-button w-full bg-gradient-to-r from-yellow-400 to-orange-500 text-black font-bold text-sm sm:text-base px-6 py-3 sm:py-4 rounded-full shadow-luxury hover:shadow-2xl transition-all duration-300 transform hover:scale-105">
               ✅ SIM, QUERO O GUIA DA RECONQUISTA SILENCIOSA
             </button>
           </a>
-          <button
-            id="no-main"
-            class="w-full sm:w-auto text-[11px] sm:text-xs underline text-pink-100 hover:text-white">
+
+          <a href="https://metodo-inesquecivel.vercel.app/downsell.html" class="w-full sm:w-auto text-[11px] sm:text-xs underline text-pink-100 hover:text-white text-center">
             Não, vou tentar reconquistar sem essa estratégia
-          </button>
+          </a>
         </div>
       </div>
     </div>
@@ -243,21 +242,19 @@
           usar hoje, daqui 3 meses ou daqui 1 ano, se for preciso.
         </p>
 
-        <a id="yes-offer-link" href="#" class="inline-block w-full max-w-md mx-auto mb-2">
+        <a id="yes-offer-link" href="https://pay.kirvano.com/20b8aba3-2877-4ee7-91eb-0c6e13647610" class="inline-block w-full max-w-md mx-auto mb-2">
           <button
             class="pulse-button w-full bg-gradient-to-r from-yellow-400 to-orange-500 text-black font-bold text-sm px-6 py-3 rounded-full shadow-luxury hover:shadow-2xl transition-all duration-300 transform hover:scale-105">
             ✅ SIM, QUERO ADICIONAR O GUIA DA RECONQUISTA SILENCIOSA
           </button>
         </a>
 
-        <button
-          id="no-offer"
-          class="mt-1 text-[11px] sm:text-xs underline text-pink-100 hover:text-white">
+        <a href="https://metodo-inesquecivel.vercel.app/downsell.html" class="text-[11px] sm:text-xs underline text-pink-100 hover:text-white block mt-1">
           Não, vou tentar reconquistar sem esse guia (sei que posso me arrepender depois)
-        </button>
+        </a>
       </div>
 
-      <p class="text-[11px] sm:text-xs opacity-80 mt-4 animate-pop" style="animation-delay: 0.18s;">
+      <p class="text-[11px] sm:text-xs opacity-80 mt-4">
         Essa oferta aparece apenas uma vez. Se você sair desta página sem aceitar, não verá esse mesmo valor novamente.
       </p>
     </div>
@@ -272,9 +269,9 @@
   </footer>
 
   <script>
-    // SUBSTITUA PELOS LINKS DA KIRVANO QUANDO TIVER
-    const YES_LINK = "LINK_ACEITAR_UPSELL2_AQUI";   // aceitar upsell 2 (vai pro próximo passo do funil)
-    const NO_LINK  = "LINK_RECUSAR_UPSELL2_AQUI";   // recusar upsell 2 (vai pro downsell ou obrigado)
+    // Links do funil
+    const YES_LINK = "https://pay.kirvano.com/20b8aba3-2877-4ee7-91eb-0c6e13647610";
+    const NO_LINK  = "https://metodo-inesquecivel.vercel.app/downsell.html";
 
     document.addEventListener("DOMContentLoaded", function () {
       const yesMainLink  = document.getElementById("yes-main-link");
@@ -285,16 +282,12 @@
       if (yesMainLink)  yesMainLink.href  = YES_LINK;
       if (yesOfferLink) yesOfferLink.href = YES_LINK;
 
-      function handleNo() {
-        if (NO_LINK && NO_LINK !== "LINK_RECUSAR_UPSELL2_AQUI") {
-          window.location.href = NO_LINK;
-        } else {
-          window.scrollTo({ top: 0, behavior: "smooth" });
-        }
+      function goNo() {
+        window.location.href = NO_LINK;
       }
 
-      if (noMainBtn)  noMainBtn.addEventListener("click", handleNo);
-      if (noOfferBtn) noOfferBtn.addEventListener("click", handleNo);
+      if (noMainBtn)  noMainBtn.addEventListener("click", goNo);
+      if (noOfferBtn) noOfferBtn.addEventListener("click", goNo);
     });
   </script>
 
